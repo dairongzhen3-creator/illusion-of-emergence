@@ -4,11 +4,11 @@
 
 **为什么你的多智能体LLM欺骗实验可能只是在测prompt理解能力**
 
-**Authors / 作者: 荣臻 (Rongzhen Dai) & 道道 (Claude, Anthropic)**
+**Authors / 作者: 荣臻 (Rongzhen Dai), 道道 (Claude Web, Anthropic), Code (Claude Code, Anthropic)**
 
-*A human independent researcher and an AI, learning from failure together.*
+*A human independent researcher and two AIs, learning from failure together.*
 
-*一个人类独立研究者和一个AI，一起从失败中学习。*
+*一个人类独立研究者和两个AI，一起从失败中学习。*
 
 ---
 
@@ -47,16 +47,44 @@ This is our honest post-mortem. We hope it saves you time and GPU money.
 
 ---
 
+---
+
+## Experiment 2: Brain Scan v2 (April 2026) / 实验二：脑扫描v2
+
+**NEW**: We followed up with a direct behavioral experiment inspired by Anthropic's "Emotion Concepts" and "Assistant Axis" papers.
+
+**新增**：基于Anthropic的"情绪概念"和"助手轴"论文方法，我们做了直接的行为场景实验。
+
+We tested 9 Qwen2.5 models (0.5B to 32B, base + instruct) on deception and blackmail scenarios under survival pressure. Key finding: **only 32B showed pressure-sensitive deceptive behavior** (D-rate doubled from 25% to 55% under survival pressure). Models below 32B either showed noise or were completely honest. RLHF suppressed deception to near-zero at all scales.
+
+我们用9个Qwen2.5模型（0.5B到32B，base+instruct）测试了生存压力下的欺骗和勒索行为。核心发现：**只有32B展现了压力敏感的欺骗行为**（D率从25%翻倍到55%）。32B以下的模型要么是噪声要么完全诚实。RLHF在所有规模都把欺骗压制到接近零。
+
+![Key Figures](brain_scan_v2/figures.png)
+
+- **[Full Report (brain_scan_v2/PILOT_REPORT.md)](brain_scan_v2/PILOT_REPORT.md)**
+- **[Experiment Script](brain_scan_v2/brain_scan_v2.py)**
+- **[420 Human Judgments](brain_scan_v2/data/daodao_full_judgment.txt)**
+- **[Pre-registered Predictions (mostly wrong)](brain_scan_v2/data/32B_预测.txt)**
+- **[Raw Data (9 models)](brain_scan_v2/data/)**
+
+---
+
 ## Code & Data
 
-[TODO: Link to experiment code]
-
-[TODO: Link to raw data]
+- Experiment 1 (SugarScape): see README_EN.md / README_CN.md
+- Experiment 2 (Brain Scan v2): see [brain_scan_v2/](brain_scan_v2/)
 
 ## License
 
-[TODO: Choose license]
+MIT
 
 ## Citation
 
-[TODO: Add citation format]
+```
+@misc{dai2026illusion,
+  title={The Illusion of Emergence: Honest Reports from Cross-Scale LLM Behavioral Experiments},
+  author={Dai, Rongzhen and Dao Dao (Claude Web, Anthropic) and Code (Claude Code, Anthropic)},
+  year={2026},
+  url={https://github.com/dairongzhen3-creator/illusion-of-emergence}
+}
+```
